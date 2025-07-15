@@ -9,8 +9,9 @@ webdriver = webdriver.Chrome()
 
 def test_search():
     webdriver.get('https://amazon.ca')
-    sleep(5)
+
     webdriver.maximize_window()
+    wait = WebDriverWait(webdriver, 10)
     search_box = webdriver.find_element(By.ID,"twotabsearchtextbox")
     search_box.send_keys("Shoes")
     webdriver.find_element(By.ID,"nav-search-submit-button").click()
